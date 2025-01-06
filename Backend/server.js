@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./src/config/db.js";
 import authRoutes from "./src/routes/auth.route.js";
 
+
 const app = express();
 const port = process.env.PORT || 5000;
 
