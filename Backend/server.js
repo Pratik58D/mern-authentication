@@ -3,7 +3,8 @@ import cors from "cors";
 import 'dotenv/config';
 import cookieParser from "cookie-parser";
 import connectDB from "./src/config/db.js";
-import authRoutes from "./src/routes/auth.route.js";
+import authRouter from "./src/routes/auth.route.js";
+import userRouter from "./src/routes/user.route.js"
 
 
 const app = express();
@@ -14,7 +15,8 @@ app.use(cookieParser());
 app.use(cors({credentials : true}));
 
 //Api endpoints
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
